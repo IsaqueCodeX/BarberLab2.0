@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 15% 8%;
+    --foreground: 40 10% 96%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 40 10% 96%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 40 10% 96%;
+
+    --primary: 30 45% 55%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 25 35% 40%;
+    --secondary-foreground: 40 10% 96%;
+
+    --muted: 220 10% 20%;
+    --muted-foreground: 40 5% 65%;
+
+    --accent: 340 40% 45%;
+    --accent-foreground: 40 10% 96%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 40 10% 96%;
+
+    --border: 220 10% 25%;
+    --input: 220 10% 20%;
+    --ring: 30 45% 55%;
+
+    --radius: 0.5rem;
+    
+    /* Custom tokens */
+    --warm-ochre: 30 45% 55%;
+    --deep-brown: 25 35% 40%;
+    --wine: 340 40% 45%;
+    --charcoal: 220 15% 12%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 8% / 0.95), hsl(220 15% 8% / 0.7));
+    --gradient-accent: linear-gradient(135deg, hsl(30 45% 55%), hsl(25 35% 40%));
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-[hsl(var(--warm-ochre))] to-[hsl(var(--deep-brown))] bg-clip-text text-transparent;
+  }
+}
